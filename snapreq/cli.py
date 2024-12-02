@@ -4,13 +4,13 @@ from snapreq.utils import METHODS, handle_request, handle_response, print_error
 
 def main():
     """Entry point for the CLI."""
-    parser = argparse.ArgumentParser(description="SnapReq: API testing tool")
+    parser = argparse.ArgumentParser(description="SnapReq: A simple API Client")
     subparsers = parser.add_subparsers(title="commands", dest="command")
 
     for method_name, method in METHODS.items():
         parser_method = subparsers.add_parser(method_name, help=f"Make a {method.name} request")
         parser_method.add_argument("url", help="API endpoint URL")
-        parser_method.add_argument("--headers", help="Headers as a JSON string")
+        parser_method.add_argument("--headers", help="Headers as a string of key-value pairs (e.g. header1=value1&header2=value2)")
         parser_method.add_argument("--show-headers", '-sh', action="store_true", help="Show response headers")
         parser_method.add_argument("--output", '-o', help="Output file path")
         

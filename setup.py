@@ -1,9 +1,8 @@
-# setup.py
 from setuptools import setup, find_packages
 
 setup(
     name='snapreq',
-    version='1.0.0',
+    version='1.1.0',
     packages=find_packages(exclude=['tests']),
     install_requires=[
         "rich>=13.9",
@@ -11,11 +10,11 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'snap=snapreq.cli:main',
+            'snapr=snapreq.cli:main',
         ],
     },
     author='Md. Saiful Islam Roni',
-    description='A sample CLI based API client',
+    description='A CLI-Based API Client for Simplified API Testing',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url="https://github.com/rnium/snapreq",
